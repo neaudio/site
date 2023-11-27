@@ -1,6 +1,7 @@
 import {
     client
 } from "https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js";
+// А нельзя вот в этот код смотреть.
 
 export default {
     name: "App",
