@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /secure/
+Disallow: /temp/
+
+Sitemap: http://neaudio.ru/sitemap.xml
