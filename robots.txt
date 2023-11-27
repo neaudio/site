@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /secure/
 Disallow: /temp/
 
-Sitemap: http://neaudio.ru/sitemap.xml
+Sitemap: https://neaudio.ru/sitemap.xml
