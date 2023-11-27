@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>НеАудио - Транскрибация</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    'sans': ['Inter'],
+                    'serif': ['Inter'],
+                    'mono': ['Inter'],
+                    'display': ['Inter'],
+                    'body': ['Inter'],
+                }
+            },
+            plugins: [],
+        }
+    </script>
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body class="bg-white font-sans leading-normal tracking-normal">
+<nav class="shadow-md bg-white sticky">
+    <div id="navbar" class="container mx-auto flex flex-wrap justify-between">
+        <a href="#" id="logo" class="p-4 text-xl font-semibold">НеАудио</a>
+        <ul id="navbar-links" class="flex flex-row flex-wrap items-center">
+            <li>
+                <a href="index.html" class="p-4 font-bold text-gray-800 hover:text-blue-500">
+                    <i class="material-icons">cloud_upload</i> Загрузить
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="p-4 text-gray-800 hover:text-blue-500">
+                    <i class="material-icons">info</i> О сервисе
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="p-4 text-gray-800 hover:text-blue-500">
+                    <i class="material-icons">help_outline</i> FAQ
+                </a>
+            </li>
+            <li>
+                <a href="index.html" class="p-4 text-gray-800 hover:text-blue-500">
+                    <i class="material-icons">contacts</i> Контакты
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<section id="docs" class="py-8 p-8 flex flex-col items-center">
+    <h2 class="text-center text-3xl font-bold text-gray-800 mb-4">Соглашение</h2>
+    <div class="text-gray-700 text-lg max-w-prose text-left">
+        <p>
+            При использовании сервиса "НеАудио", включая загрузку или обработку файлов, вы соглашаетесь с условиями,
+            что администрация "НеАудио" имеет право хранить, удалять, использовать, обрабатывать и передавать третьим лицам
+            полученную от вас информацию (файлы cookie, заголовки браузера, IP-адрес, файлы, информацию так или иначе представленную в файлах) в целях улучшения и предоставления функциональности сервиса.
+            Вы также подтверждаете, что ознакомились и согласны с правилами использования и политикой конфиденциальности
+            сторонних сервисов, включая <a href="https://huggingface.co">Hugging Face</a>, <a href="https://google.com">Google</a>, <a href="https://yandex.ru">Yandex</a>.<br/>
+            <br/>
+            Кроме того, при использовании сайта, вы обязуетесь:<br/>
+            1. Не проводить реверс-инжиниринг, обратную разработку или декомпиляцию любых компонентов сайта.<br/>
+            2. Не пытаться нарушить, вмешиваться в работу или по-любому образом повредить сайт, его серверы, сети, программное обеспечение, оборудование или данные.<br/>
+            3. Не использовать сайт для незаконных или мошеннических целей.<br/>
+            <br/>
+            Администрация сайта оставляет за собой право в любой момент изменить или прекратить предоставление услуг без предварительного уведомления и не несет ответственности за любые возникшие в связи с этим убытки.<br/>
+            <br/>
+            Ваше дальнейшее использование сайта означает согласие с этими условиями. Если вы не согласны с этими условиями,
+            пожалуйста, не используйте наш сервис и покиньте сайт.
+        </p>
+    </div>
+    <h2 class="text-center text-3xl font-bold text-gray-800 mb-4">Отказ от Гарантий</h2>
+    <div class="text-gray-700 text-lg mx-auto leading-relaxed max-w-prose text-left">
+        <p>
+            Сервис "НеАудио" предоставляется на условиях "как есть" и "как доступно".<br/>
+            Администрация "НеАудио" явно отказывается от всех гарантий любого рода, явных или подразумеваемых, включая, но не ограничиваясь, подразумеваемыми гарантиями товарной пригодности, пригодности для определенной цели и ненарушения прав.<br/>
+            <br/>
+            Мы не гарантируем, что сервис будет соответствовать вашим требованиям; будет непрерывным, своевременным, безопасным или безошибочным; что результаты, которые могут быть получены из использования сервиса, будут точными или надежными; что качество любых продуктов, услуг, информации или другого материала, приобретенного или полученного вами через сервис, будет соответствовать вашим ожиданиям; и что любые ошибки в программном обеспечении будут исправлены.<br/>
+            <br/>
+            Любой материал, загруженный или иным образом полученный через использование сервиса, осуществляется на ваш страх и риск, и вы будете единственным ответственным за любой ущерб вашему компьютеру или потерю данных в результате загрузки такого материала.<br/>
+            <br/>
+            Ни при каких обстоятельствах администрация "НеАудио" не несет ответственность за какие-либо прямые, косвенные, случайные, специальные, следственные или штрафные убытки, включая, но не ограничиваясь, убытки за упущенную выгоду, недобросовестность, потерю данных или другие нематериальные потери (даже если администрация "НеАудио" была уведомлена о возможности таких убытков), возникшие в результате использования или невозможности использования сервиса.<br/>
+        </p>
+    </div>
+</section>
+<footer class="bg-white p-4 text-center">
+    <p class="text-gray-600">&copy; 2023 НеАудио. Все права защищены. </p>
+</footer>
+
+</body>
+</html>

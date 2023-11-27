@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>НеАудио - Транскрибация</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          'sans': ['Inter'],
+          'serif': ['Inter'],
+          'mono': ['Inter'],
+          'display': ['Inter'],
+          'body': ['Inter'],
+        }
+      },
+      plugins: [],
+    }
+  </script>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body class="bg-white font-sans leading-normal tracking-normal">
+<nav class="shadow-md bg-white sticky">
+  <div id="navbar" class="container mx-auto flex flex-wrap justify-between">
+    <a href="#" id="logo" class="p-4 text-xl font-semibold">НеАудио</a>
+    <ul id="navbar-links" class="flex flex-row flex-wrap items-center">
+      <li>
+        <a href="#upload" class="p-4 font-bold text-gray-800 hover:text-blue-500">
+          <i class="material-icons">cloud_upload</i> Загрузить
+        </a>
+      </li>
+      <li>
+        <a href="#about" class="p-4 text-gray-800 hover:text-blue-500">
+          <i class="material-icons">info</i> О сервисе
+        </a>
+      </li>
+      <li>
+        <a href="#faq" class="p-4 text-gray-800 hover:text-blue-500">
+          <i class="material-icons">help_outline</i> FAQ
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="p-4 text-gray-800 hover:text-blue-500">
+          <i class="material-icons">contacts</i> Контакты
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<header id="upload"  class="mb-4 h-fit bg-blue-500 p-4 pb-16 pt-16 text-center text-white">
+  <h1 class="mb-2 text-4xl font-extrabold">НеАудио — Сервис транскрибации</h1>
+  <p class="text-xl">Превратите ваше аудио в текст с высокой точностью и в минимальные сроки.</p>
+  <div class="container mt-8 max-w-fit rounded-3xl">
+    <div class="container flex flex-wrap place-content-center items-center gap-4">
+      <input type="file" id="fileInput" class="block text-base text-white file:mr-4 file:rounded-xl file:border-0 file:bg-blue-200 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-blue-700 hover:file:bg-blue-300" accept="audio/*,video/*" />
+      <button id="uploadButton" class="button-hover-effect rounded-xl bg-blue-700 px-4 py-2 font-bold text-white transition duration-200 hover:bg-blue-800 flex items-center">
+        <i class="material-icons">file_upload</i>
+        <span>Загрузить и Транскрибировать</span>
+      </button>
+
+    </div>
+    <div class="container flex flex-wrap place-content-center mt-4 items-center gap-4">
+    <input type="text" id="linkInput" placeholder="Или введите ссылку здесь (YouTube, RuTube)"
+           class="block w-full text-base rounded-xl text-gray-700 border px-4 py-2 focus:outline-none focus:border-blue-500" />
+    </div>
+  </div>
+
+</header>
+
+<section id="result" class="p-8" style="display: none">
+  <div class="shadow-gray-150 container rounded-3xl bg-gray-50 p-4 shadow-lg">
+    <h2 class="text-white-800 text-center text-3xl font-bold">Текст расшифровки</h2>
+    <p></p>
+    <p id="resultText" class="font-base scrollable max-h-80 rounded-xl p-2">Здесь точно что-то должно было быть...</p>
+  </div>
+</section>
+
+<div id="about" class="container flex flex-col bg-white">
+  <section  class="py-8 flex flex-col items-center">
+    <h2 class="text-center text-3xl font-bold text-gray-800 mb-4">О сервисе</h2>
+    <p class="text-gray-700 text-lg mx-auto leading-relaxed max-w-prose">
+
+      НеАудио предоставляет удобный и точный онлайн-сервис для транскрибации аудио
+      и видео на русском языке, целясь на доступность и простоту.
+
+    </p>
+  </section>
+
+
+  <section id="faq" class="py-8 flex flex-col items-center">
+    <h2 class="text-center text-3xl font-bold text-gray-800 mb-4">Часто задаваемые вопросы</h2>
+    <div class="faq-item mb-4 w-full max-w-prose">
+      <button class="faq-question bg-blue-100 hover:bg-blue-200 text-left text-gray-800 font-semibold py-2 px-4 rounded-xl w-full">
+        <i class="material-icons">question_mark</i> Как быстро вы выполняете транскрибацию?
+      </button>
+      <div class="faq-answer hidden p-4 rounded-b-lg bg-gray-50">
+        <p>Обычно это занимает от 30 секунд до 1 часа.</p>
+      </div>
+    </div>
+
+    <div class="faq-item mb-4 w-full max-w-prose">
+      <button class="faq-question bg-blue-100 hover:bg-blue-200 text-left text-gray-800 font-semibold py-2 px-4 rounded-xl w-full">
+        <i class="material-icons">question_mark</i>  Какая точность транскрибации у вашего сервиса?
+      </button>
+      <div class="faq-answer hidden p-4 rounded-b-lg bg-gray-50">
+        <p>Мы гордимся высокой точностью нашего сервиса, достигающей до 96% в идеальных условиях записи.</p>
+      </div>
+    </div>
+
+    <div class="faq-item mb-4 w-full max-w-prose">
+      <button class="faq-question bg-blue-100 hover:bg-blue-200 text-left text-gray-800 font-semibold py-2 px-4 rounded-xl w-full">
+        <i class="material-icons">question_mark</i>  Какие форматы аудио и видео поддерживает ваш сервис?
+      </button>
+      <div class="faq-answer hidden p-4 rounded-b-lg bg-gray-50">
+        <p>Мы поддерживаем все популярные аудио и видео форматы, включая MP3, WAV, MP4, AVI и многие другие.</p>
+      </div>
+    </div>
+    <div class="faq-item mb-4 w-full max-w-prose">
+      <button class="faq-question bg-blue-100 hover:bg-blue-200 text-left text-gray-800 font-semibold py-2 px-4 rounded-xl w-full">
+        <i class="material-icons">question_mark</i>  Как мне получить результаты транскрибации?
+      </button>
+      <div class="faq-answer hidden p-4 rounded-b-lg bg-gray-50">
+        <p>После обработки вашего файла результаты транскрибации будут доступны на этой странице в специальном блоке "Текст расшифровки".</p>
+      </div>
+    </div>
+    <div class="faq-item mb-4 w-full max-w-prose">
+      <button class="faq-question bg-blue-100 hover:bg-blue-200 text-left text-gray-800 font-semibold py-2 px-4 rounded-xl w-full">
+        <i class="material-icons">question_mark</i>   Могу ли я закрыть страницу во время обработки файла?
+      </button>
+      <div class="faq-answer hidden p-4 rounded-b-lg bg-gray-50">
+        <p>Нет, необходимо дождаться окончания обработки файла.</p>
+      </div>
+    </div>
+    <div class="faq-item mb-4 w-full max-w-prose">
+      <button class="faq-question bg-blue-100 hover:bg-blue-200 text-left text-gray-800 font-semibold py-2 px-4 rounded-xl w-full">
+        <i class="material-icons">question_mark</i>    Почему возникает ошибка при повторной загрузке файла?
+      </button>
+      <div class="faq-answer hidden p-4 rounded-b- bg-gray-50">
+        <p>Сервис не поддерживает повторную обработку тех же файлов. Загрузите новое аудио.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-8 flex flex-col items-center">
+    <h2 class="text-center text-3xl font-bold text-gray-800 mb-4">Свяжитесь с нами</h2>
+    <div class="text-gray-700 text-lg mx-auto leading-relaxed max-w-prose text-center">
+      <p><i class="material-icons">email</i>info@neaudio.ru</p>
+    </div>
+  </section>
+</div>
+
+<footer class="bg-white p-4 pt-0 text-center">
+  <p class="text-gray-500">Используя сервис, вы соглашаетесь с
+    <a href=documents.html class="text-blue-400">условиями использования сервиса и другими документами.</a> </p>
+  <p class="text-gray-500">&copy; 2023 НеАудио. Все права защищены. </p>
+</footer>
+
+<div id="errorModal" class="modal rounded-lg">
+  <p id="errorMessage">"></p>
+  <button id="errorButton" class="rounded-lg">
+    <i class="material-icons">close</i> Закрыть
+  </button>
+
+</div>
+<div class="overlay"></div>
+</body>
+<script src="js/faq.js"></script>
+<script type="module" src="js/index.js"></script>
+</html>
