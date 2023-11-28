@@ -1,1 +1,0 @@
-document.querySelectorAll(".faq-question").forEach(e=>{e.addEventListener("click",l=>{let t=e.nextElementSibling;t.classList.toggle("hidden")})});
