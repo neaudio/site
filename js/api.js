@@ -1,1 +1,62 @@
-import{client as t}from"https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js";export default{name:"App",stt_client:await t("https://sanchit-gandhi-whisper-jax.hf.space/"),async transcribeAudioBlob(t){for(let e=0;e<3;e++)try{let r=await this.stt_client.predict("/predict",[t,"transcribe",!0]);return r.data[0]}catch(i){console.log(i)}throw Error("tryCounter exceed.")},async transcribeAudioFile(t){for(let e=0;e<3;e++)try{let r=await this.stt_client.predict("/predict_1",[t,"transcribe",!0]);return r.data[0]}catch(i){console.log(i)}throw Error("tryCounter exceed.")},async transcribeLink(t){for(let e=0;e<3;e++)try{let r=await this.stt_client.predict("/predict_2",[t,"transcribe",!0]);return r.data[1]}catch(i){console.log(i)}throw Error("tryCounter exceed.")}};
+import {
+    client
+} from "https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js";
+
+
+
+export default {
+    name: "App",
+    stt_client: await client("https://sanchit-gandhi-whisper-jax.hf.space/"),
+
+    async transcribeAudioBlob(audioBlob) {
+        for (let tryCounter = 0; tryCounter < 3; tryCounter++) {
+            try {
+                const result = await this.stt_client.predict("/predict", [
+                    audioBlob,
+                    "transcribe",
+                    false
+                ]);
+                return result.data[0];
+            } catch (e){
+                console.log(e)
+            }
+
+        }
+        throw new Error("tryCounter exceed.");
+    },
+
+    async transcribeAudioFile(audioBlob) {
+        for (let tryCounter = 0; tryCounter < 3; tryCounter++) {
+            try {
+                const result = await this.stt_client.predict("/predict_1", [
+                    audioBlob,
+                    "transcribe",
+                    false
+                ]);
+                return result.data[0];
+            } catch (e){
+                console.log(e)
+            }
+
+        }
+        throw new Error("tryCounter exceed.");
+    },
+
+    async transcribeLink(audioURL) {
+        for (let tryCounter = 0; tryCounter < 3; tryCounter++) {
+            try {
+                const result = await this.stt_client.predict("/predict_2", [
+                    audioURL,
+                    "transcribe",
+                    false
+                ]);
+                return result.data[1];
+            } catch (e){
+                console.log(e)
+            }
+
+        }
+        throw new Error("tryCounter exceed.");
+    },
+
+}

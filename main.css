@@ -10,7 +10,9 @@
     vertical-align: middle; /* Убедитесь, что иконка выровнена по вертикали */
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
 
 #progressBar {
     width: 0%;
@@ -111,6 +113,16 @@ button:hover {
 /* Улучшенный отзывчивый дизайн */
 
 @media (max-width: 600px){
+    #fileInput {
+        color: transparent;
+        width: 140px;
+    }
+    #summaryButton {
+        display: none;
+    }
+    #improveButton {
+        display: none;
+    }
     #navbar-links {
         display: none;
     }
